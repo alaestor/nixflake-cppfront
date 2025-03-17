@@ -12,5 +12,5 @@ To explicitly build cppfront, use `nix build`
 
 To build and run the hello-world demo
 ```
-nix build #hellocpp2 && ./result/bin/hellocpp2
+nix build .#hellocpp2 && ./result/bin/hellocpp2
 ```
