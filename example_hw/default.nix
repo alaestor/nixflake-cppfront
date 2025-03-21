@@ -1,7 +1,7 @@
 { stdenv, lib, cppfront }:
 let
 
-  pname   = "HelloCpp2";
+  pname   = "example_hw";
   version = "0.1.0";
   exename = lib.toLower pname;
 
@@ -9,15 +9,15 @@ in stdenv.mkDerivation
 {
   inherit pname version;
 
-  buildInputs = [
+  nativeBuildInputs = [
     cppfront
   ];
 
-  src = ./src;
+  src = ./.;
 
   buildPhase = ''
-    cppfront hello.cpp2 -p
-    g++ hello.cpp -std=c++20 -o ${exename}
+    cppfront hello.cpp2 -pure-cpp2 -fno-rtti
+    g++ hello.cpp -std=c++23 -Wall -Wextra -Wpedantic -Os -fno-rtti -o ${exename}
   '';
 
   installPhase = ''

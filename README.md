@@ -1,16 +1,27 @@
-An Experimental Nix Flake For [CPP2](https://github.com/hsutter/cppfront)
+# Experimental [CPP2](https://github.com/hsutter/cppfront) Nix Flake
 
----
+## Nix Shells
 
-Use `nix develop` to get a shell with gcc and cppfront.
+`nix develop` for the stdenv tools with cppfront.
 
-But you probably want to add a build system to packages...
+`nix develop '.#qt` to also get cmake, qt6, and qtcreator.
 
----
+## Building
 
-To explicitly build cppfront, use `nix build`
+### Build cppfront
 
-To build and run the hello-world demo
+`nix build`
+
+### Build & Run Examples
+
+Cpp2 Hello World
+```sh
+nix build '.#example'
+./result/bin/example_hw
 ```
-nix build .#hellocpp2 && ./result/bin/hellocpp2
+
+Cpp2 with CMake and Qt6
+```sh
+nix build '.#exampleqt'
+./result/bin/example_hw_qt
 ```
