@@ -15,8 +15,8 @@
       {
         packages = {
           default   = cppfront;
-          example   = pkgs.callPackage             ./example_hw     { inherit cppfront; };
-          exampleqt = pkgs.qt6Packages.callPackage ./example_hw_qt6 { inherit cppfront; };
+          example   = pkgs.callPackage             ./example_hw    { inherit cppfront; };
+          exampleqt = pkgs.qt6Packages.callPackage ./example_hw_qt { inherit cppfront; };
         };
         devShells = {
           default = pkgs.mkShell {
@@ -24,7 +24,7 @@
             inputsFrom = [ config.packages.example ];
           };
           qt = pkgs.mkShell {
-            name = "CPP2 CMAKE QT6";
+            name = "CPP2 CMAKE QT";
             inputsFrom = [ config.packages.exampleqt ];
             packages = with pkgs; [ qtcreator ];
           };
