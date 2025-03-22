@@ -4,7 +4,7 @@
 
 `nix develop` for the stdenv tools with cppfront.
 
-`nix develop '.#qt` to also get cmake, qt6, and qtcreator.
+`nix develop '.#qt'` to also get cmake, qt6, and qtcreator.
 
 ## Building
 
