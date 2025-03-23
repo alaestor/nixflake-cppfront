@@ -1,7 +1,6 @@
 { stdenv
 , lib
-, qtbase
-, full
+, qt6
 , cppfront
 , cmake
 , wrapQtAppsHook
@@ -18,8 +17,7 @@ in stdenv.mkDerivation
   src = ./.;
 
   buildInputs = [
-    qtbase
-    full
+    qt6.qtbase
   ];
 
   nativeBuildInputs = [
